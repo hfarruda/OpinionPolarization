@@ -10,7 +10,7 @@ Henrique F. de Arruda acknowledges FAPESP for sponsorship (grants 2018/10489-0 a
 This software is under the following license.
 
 ```
-Copyright (c) 2021 OpinionPolarization
+Copyright (c) 2022 OpinionPolarization
 
 OpinionPolarization (c) by HenriqueFerraz de Arruda, FelipeMaciel Cardoso, 
 Guilherme Ferraz de Arruda, Alexis R. Hernández, Luciano da Fontoura Costa, 
