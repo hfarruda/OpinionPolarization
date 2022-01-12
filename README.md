@@ -7,8 +7,7 @@ Modelling how social network algorithms can influence opinion polarization, Info
 [(arXiv)](https://arxiv.org/abs/2102.00099)
 
 
-## Usage
-1 - Compile
+## Compile
 
 For compiling this code, both Clang and GCC can be used.
 ```
@@ -19,11 +18,26 @@ For compiling this code, both Clang and GCC can be used.
  gcc -Ofast simulation.cpp -o simulation
 ```
 
-2 - Parameters
+## Documentation
+```
+./simulation network_name output_name phi min_value max_value n_iterations step_iterations delta transmission_type reception_type n_separated_files rewire_dynamics
+```
+
+- `network_name` - ???
+- `output_name` - ???
+- `phi` - ??? 
+- `min_value` - ??? 
+- `max_value` - ??? 
+- `n_iterations` - ??? 
+- `step_iterations` - ??? 
+- `delta` - ??? 
+- `transmission_type` - ??? 
+- `reception_type` - ??? 
+- `n_separated_files` - ???
+- `rewire_dynamics` - ???
 
 
-
-3 - Examples of use
+## Examples of use
 
 There are two possibilities for executing the software. As the first option, all the parameters must be listed as arguments.
 
@@ -37,7 +51,7 @@ The second possibility is to create a configuration file, named "parameters.txt"
 ./simulation
 ```
 
-For both cases, the parameters must follow the order shown in 2. 
+For both cases, the parameters must follow the order shown in the Documentation section. 
 
 ## Acknowledgements
 Henrique F. de Arruda acknowledges FAPESP for sponsorship (grants 2018/10489-0 and 2019/16223-5). Guilherme F. de Arruda and Yamir Moreno acknowledge support from Intesa Sanpaolo Innovation Center. Luciano da F. Costa thanks CNPq (Grant No. 307085/2018-0) and NAP-PRP-USP for sponsorship. Yamir Moreno acknowledges partial support from the Government of Aragón and FEDER funds, Spain through grant ER36-20R to FENOL, and by MINECO and FEDER funds (grant FIS2017-87519-P). Research carried out using the computational resources of the Center for Mathematical Sciences Applied to Industry (CeMEAI) funded by FAPESP (grant 2013/07375-0). This work has been supported also by FAPESP grants 2015/22308-2. The founders had no role in study design, data collection, and analysis, decision to publish, or preparation of the manuscript.
