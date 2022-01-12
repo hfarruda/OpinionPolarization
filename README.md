@@ -7,6 +7,22 @@ Modelling how social network algorithms can influence opinion polarization, Info
 [(arXiv)](https://arxiv.org/abs/2102.00099)
 
 
+## Usage
+1 - Compile
+
+For compiling this code, one of the following options can be used.
+```
+ clang -Ofast simulation.cpp -o simulation
+```
+
+```
+ gcc -Ofast simulation.cpp -o simulation
+```
+
+2 - Parameters
+
+
+3 - Examples of use
 
 ![](./example.png)
 
