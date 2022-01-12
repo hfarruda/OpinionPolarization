@@ -1,6 +1,9 @@
 # OpinionPolarization
 Software for simulating a dynamic of opinion formation and transmission in social networks.
+More information regarding these measurements are described in the papers listed as follows:
 
+[Henrique Ferraz de Arruda, Felipe Maciel Cardoso, Guilherme Ferraz de Arruda, Alexis R. Hernández, Luciano da Fontoura Costa, Yamir Moreno,
+Modelling how social network algorithms can influence opinion polarization, Information Sciences, Volume 588, 2022.](https://doi.org/10.1016/j.ins.2021.12.069)(https://arxiv.org/abs/2102.00099)
 
 
 ## Acknowledgements
