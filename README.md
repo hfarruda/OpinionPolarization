@@ -48,7 +48,7 @@ For compiling this code, both Clang and GCC can be used.
 * `reception_type` - One of the following options must be chosen: 
   - `COS_X`: P<sub>d</sub> <sup>I</sup>;
   - `COS_X_2`: P<sub>d</sub> <sup>II</sup>;
-  - `EQUAL_TRANSMISSION`: P<sub>d</sub> <sup>III</sup>.
+  - `EQUAL`: P<sub>d</sub> <sup>III</sup>.
 * `n_blocks` - Number of blocks of iterations. Each block saves a separated file with `n_block_iterations` iterations.
 * `rewire_dynamics` - 0 and 1 represent the dynamic with and without rewiring, respectively. 
 
