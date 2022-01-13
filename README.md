@@ -23,7 +23,17 @@ For compiling this code, both Clang and GCC can be used.
 ./simulation network_name output_name phi min_value max_value n_iterations step_iterations delta transmission_type reception_type n_separated_files rewire_dynamics
 ```
 
-- `network_name` - ???
+- `network_name` - Filename of the input network, and the format of this file must be adjacency list. Although the dynamic was proposed for undirected networks, this software can be used for both directed and undirected. Furthermore, it is necessary to identify the same connection in both directions to be undirected. See an example as follows:
+
+```
+0 1 2
+1 0
+2 0 5
+3 4 5
+4 3 5
+5 2 3 4
+``
+
 - `output_name` - ???
 - `phi` - ??? 
 - `min_value` - ??? 
