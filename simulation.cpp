@@ -539,9 +539,10 @@ int main(int argc, char *argv[]){
             fgets (str, MAXCHAR, fp);
             n_iterations = (unsigned int) atoi(str);
             if (variablesVerbose) printf("Total number of iterations: %u \n", n_iterations);
-            fgets (str, MAXCHAR, fp);
-            step_iterations = (unsigned int) atoi(str);
-            if (variablesVerbose) printf("Saves for each %u steps \n", step_iterations);
+            // fgets (str, MAXCHAR, fp);
+            // step_iterations = (unsigned int) atoi(str);
+            // if (variablesVerbose) printf("Saves for each %u steps \n", step_iterations);
+            step_iterations = n_iterations;
             fgets (str, MAXCHAR, fp);
             step = atof(str);
             if (variablesVerbose) printf("Opinion change step %lf \n", step);
@@ -564,7 +565,7 @@ int main(int argc, char *argv[]){
             str[strlen(str)-1] = '\0'; 
             if (strcmp("COS_X_2", str) == 0) reception_type = COS_X_2;
             else if (strcmp("COS_X", str) == 0) reception_type = COS_X;
-            else if (strcmp("EQUAL_TRANSMISSION", str) == 0) reception_type = EQUAL_TRANSMISSION;
+            else if (strcmp("EQUAL", str) == 0) reception_type = EQUAL_TRANSMISSION;
             else{
                 printf ("Error: undefined reception type.");
                 fclose(fp);
@@ -604,39 +605,40 @@ int main(int argc, char *argv[]){
         max_value = atof(argv[5]);
         if (variablesVerbose) printf("Max opinion value: %lf \n", max_value);
         n_iterations = (unsigned int) atoi(argv[6]);
-        if (variablesVerbose) printf("Total number of iterations: %u \n", n_iterations);
-        step_iterations = (unsigned int) atoi(argv[7]);
+        // if (variablesVerbose) printf("Total number of iterations: %u \n", n_iterations);
+        // step_iterations = (unsigned int) atoi(argv[7]);
+        step_iterations = n_iterations;
         if (variablesVerbose) printf("Saves for each %u steps \n", step_iterations);
-        step = atof(argv[8]);
+        step = atof(argv[7]);
         if (variablesVerbose) printf("Opinion change step %lf \n", step);
         //Transmission type
-        if (strcmp("COS_X_2",argv[9]) == 0) transmission_type = COS_X_2;
-        else if (strcmp("COS_X",argv[9]) == 0) transmission_type = COS_X;
-        else if (strcmp("EQUAL_TRANSMISSION",argv[9]) == 0) transmission_type = EQUAL_TRANSMISSION;
-        else if (strcmp("COS_X_CUT",argv[9]) == 0) transmission_type = COS_X_CUT;
-        else if (strcmp("MIXED_TRANSMISSION",argv[9]) == 0) transmission_type = MIXED_TRANSMISSION;
+        if (strcmp("COS_X_2",argv[8]) == 0) transmission_type = COS_X_2;
+        else if (strcmp("COS_X",argv[8]) == 0) transmission_type = COS_X;
+        else if (strcmp("EQUAL_TRANSMISSION",argv[8]) == 0) transmission_type = EQUAL_TRANSMISSION;
+        else if (strcmp("COS_X_CUT",argv[8]) == 0) transmission_type = COS_X_CUT;
+        else if (strcmp("MIXED_TRANSMISSION",argv[8]) == 0) transmission_type = MIXED_TRANSMISSION;
         else{
             printf ("Error: undefined transmission type.");
             return 1;
         }
-        if (variablesVerbose) printf("Transmission type %s %d\n", argv[9], transmission_type);
+        if (variablesVerbose) printf("Transmission type %s %d\n", argv[8], transmission_type);
         //Reception type
-        if (strcmp("COS_X_2",argv[10]) == 0) reception_type = COS_X_2;
-        else if (strcmp("COS_X",argv[10]) == 0) reception_type = COS_X;
-        else if (strcmp("EQUAL_TRANSMISSION",argv[10]) == 0) reception_type = EQUAL_TRANSMISSION;
+        if (strcmp("COS_X_2",argv[9]) == 0) reception_type = COS_X_2;
+        else if (strcmp("COS_X",argv[9]) == 0) reception_type = COS_X;
+        else if (strcmp("EQUAL",argv[9]) == 0) reception_type = EQUAL_TRANSMISSION;
         else{
             printf ("Error: undefined reception type.");
             return 1;
         }
-        if (variablesVerbose) printf("Reception type %s %d\n", argv[10], reception_type);
-        n_separated_files = (unsigned int) atoi(argv[11]);
+        if (variablesVerbose) printf("Reception type %s %d\n", argv[9], reception_type);
+        n_separated_files = (unsigned int) atoi(argv[10]);
         if (variablesVerbose){
             if (n_separated_files == 1)
                 printf("Generates %u separated file.\n", n_separated_files);
             else
                 printf("Generates %u separated files.\n", n_separated_files);
         }
-        rewire_dynamics = (bool) atoi(argv[12]);
+        rewire_dynamics = (bool) atoi(argv[11]);
         if (rewire_dynamics == true)
             printf("Dynamics with rewiring.\n");
         else
