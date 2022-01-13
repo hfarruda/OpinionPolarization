@@ -9,13 +9,13 @@ Modelling how social network algorithms can influence opinion polarization, Info
 
 ## Compile
 
-For compiling this code, both Clang and GCC can be used.
+For compiling this code, both Clang and G++ can be used.
 ```
  clang -Ofast simulation.cpp -o simulation
 ```
 
 ```
- gcc -Ofast simulation.cpp -o simulation
+ g++ -Ofast simulation.cpp -o simulation
 ```
 
 ## Documentation
