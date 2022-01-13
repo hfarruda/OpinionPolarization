@@ -32,19 +32,19 @@ For compiling this code, both Clang and GCC can be used.
 3 4 5
 4 3 5
 5 2 3 4
-``
+```
 
-- `output_name` - ???
-- `phi` - ??? 
-- `min_value` - ??? 
-- `max_value` - ??? 
-- `n_iterations` - ??? 
-- `step_iterations` - ??? 
-- `delta` - ??? 
+- `output_name` - Output filenames;
+- `phi` - Parameter phi that controls the distribution probability function;
+- `min_value` - Minimun opinion value; 
+- `max_value` - Maximun opinion value.
+- `n_iterations` - Number of iteretions;
+- `step_iterations` - Number of steps . To let the code more optimized use `n_iterations = step_iterations`;
+- `delta` - Parameter delta, which is a float number;
 - `transmission_type` - ??? 
 - `reception_type` - ??? 
-- `n_separated_files` - ???
-- `rewire_dynamics` - ???
+- `n_separated_files` - 1 if the desired output is only the resultant opinions. For `n_separated_files > 1`, separated files are saved, representing the opinions and the resultant network structure. In this case, the files represent the execution of `n_iterations` = iterations.
+- `rewire_dynamics` - 0 and 1 represent the dynamic with and without rewiring, respectively. 
 
 
 ## Examples of use
