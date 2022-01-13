@@ -23,7 +23,7 @@ For compiling this code, both Clang and GCC can be used.
 ./simulation network_name output_name phi min_value max_value n_iterations step_iterations delta transmission_type reception_type n_separated_files rewire_dynamics
 ```
 
-- `network_name` - Filename of the input network, and the format of this file must be adjacency list. Although the dynamic was proposed for undirected networks, this software can be used for both directed and undirected. Furthermore, it is necessary to identify the same connection in both directions to be undirected. See an example as follows:
+* `network_name` - Filename of the input network, and the format of this file must be adjacency list. Although the dynamic was proposed for undirected networks, this software can be used for both directed and undirected. Furthermore, it is necessary to identify the same connection in both directions to be undirected. See an example as follows:
 
 ```
 0 1 2
@@ -34,17 +34,24 @@ For compiling this code, both Clang and GCC can be used.
 5 2 3 4
 ```
 
-- `output_name` - Output filenames;
-- `phi` - Parameter phi that controls the distribution probability function;
-- `min_value` - Minimun opinion value; 
-- `max_value` - Maximun opinion value.
-- `n_iterations` - Number of iteretions;
-- `step_iterations` - Number of steps . To let the code more optimized use `n_iterations = step_iterations`;
-- `delta` - Parameter delta, which is a float number;
-- `transmission_type` - ??? 
-- `reception_type` - ??? 
-- `n_separated_files` - 1 if the desired output is only the resultant opinions. For `n_separated_files > 1`, separated files are saved, representing the opinions and the resultant network structure. In this case, the files represent the execution of `n_iterations` = iterations.
-- `rewire_dynamics` - 0 and 1 represent the dynamic with and without rewiring, respectively. 
+* `output_name` - Output filenames;
+* `phi` - Parameter phi that controls the distribution probability function;
+* `min_value` - Minimun opinion value; 
+* `max_value` - Maximun opinion value.
+* `n_iterations` - Number of iteretions;
+* `step_iterations` - Number of steps . To let the code more optimized use `n_iterations = step_iterations`;
+* `delta` - Parameter delta, which is a float number;
+* `transmission_type` - One of the following options must be chosen:
+  - `COS_X`: P<sub>t</sub> <sup>pol</sup>(x);
+  - `COS_X_CUT`: P<sub>t</sub> <sup>sim</sup>(x);
+  - `EQUAL_TRANSMISSION`: P<sub>t</sub> <sup>uni</sup>(x);
+  - `MIXED_TRANSMISSION`: P<sub>t</sub> <sup>all</sup>(x);
+* `reception_type` - One of the following options must be chosen: 
+  - `COS_X`: P<sub>d</sub> <sup>I</sup>;
+  - `COS_X_2`: P<sub>d</sub> <sup>II</sup>;
+  - `EQUAL_TRANSMISSION`: P<sub>d</sub> <sup>III</sup>.
+* `n_separated_files` - 1 if the desired output is only the resultant opinions. For `n_separated_files > 1`, separated files are saved, representing the opinions and the resultant network structure. In this case, the files represent the execution of `n_iterations` = iterations.
+* `rewire_dynamics` - 0 and 1 represent the dynamic with and without rewiring, respectively. 
 
 
 ## Examples of use
