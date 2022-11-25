@@ -50,7 +50,7 @@ For compiling this code, both Clang and G++ can be used.
   - `COS_X_2`: P<sub>d</sub> <sup>II</sup>;
   - `EQUAL`: P<sub>d</sub> <sup>III</sup>.
 * `n_blocks` - Number of blocks of iterations. Each block saves a separated file with `n_block_iterations` iterations.
-* `rewire_dynamics` - 0 and 1 represent the dynamic with and without rewiring, respectively. 
+* `rewire_dynamics` - 1 and 0 represent the dynamic with and without rewiring, respectively. 
 
 
 ## Examples of use
@@ -78,7 +78,7 @@ This software is under the following license.
 ```
 Copyright (c) 2022 OpinionPolarization
 
-OpinionPolarization (c) by HenriqueFerraz de Arruda, FelipeMaciel Cardoso, 
+OpinionPolarization (c) by Henrique Ferraz de Arruda, Felipe Maciel Cardoso, 
 Guilherme Ferraz de Arruda, Alexis R. Hernández, Luciano da Fontoura Costa, 
 and Yamir Moreno
 
