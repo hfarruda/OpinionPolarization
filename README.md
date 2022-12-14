@@ -18,6 +18,11 @@ For compiling this code, both Clang and G++ can be used.
  g++ -Ofast simulation.cpp -o simulation
 ```
 
+To use a Mac with an ARM processor, it is also possible to compile using:
+```
+ clang -arch arm64 -Ofast simulation.cpp -o simulation
+```
+
 ## Documentation
 ```
 ./simulation network_name output_name phi min_value max_value n_block_iterations delta transmission_type reception_type n_blocks rewire_dynamics
