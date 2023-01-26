@@ -148,8 +148,7 @@ Network loadNetwork(char *fileName, bool verbose){
     unsigned int actualNode = 0;
     unsigned int actualNeighbor = 0;
     if (verbose) printf("Reading file...\n");
-    while (!feof(fp)){
-        fgets (str, MAXCHAR, fp);
+    while (fgets (str, MAXCHAR, fp)){
         if (str[0] != '#'){//Skip comment line
             i = 0;
             //Finding node
@@ -517,37 +516,65 @@ int main(int argc, char *argv[]){
         fp = fopen("parameters.txt", "r");
         if (fp != NULL){
             char str[MAXCHAR];
-            fgets (str, MAXCHAR, fp);
+            if (fgets (str, MAXCHAR, fp) == NULL){
+                printf("Error: no network name.\n");
+                return 1;
+            }
             fileName = (char *) malloc(strlen(str) + 1);
             strcpy(fileName, str);
             fileName[strlen(fileName)-1] = '\0'; 
             if (variablesVerbose) printf("Network name: %s \n", fileName);
-            fgets (str, MAXCHAR, fp);
+            
+            if (fgets (str, MAXCHAR, fp) == NULL){
+                printf("Error: no out filename name.\n");
+                return 1;
+            }
             nameOut = (char *) malloc(strlen(str) + 1);
             strcpy(nameOut, str);
             nameOut[strlen(nameOut)-1] = '\0'; 
             if (variablesVerbose) printf("Out filename: %s \n", nameOut);
-            fgets (str, MAXCHAR, fp);
+            
+            if (fgets (str, MAXCHAR, fp) == NULL){
+                printf("Error: phi (reception).\n");
+                return 1;
+            }
             phi_reception = atof(str);
             if (variablesVerbose) printf("phi (reception): %lf \n", phi_reception);
-            fgets (str, MAXCHAR, fp);
+            
+            if (fgets (str, MAXCHAR, fp) == NULL){
+                printf("Error: no min opinion value.\n");
+                return 1;
+            }
             min_value = atof(str);
             if (variablesVerbose) printf("Min opinion value: %lf \n", min_value);
-            fgets (str, MAXCHAR, fp);
+            
+            if (fgets (str, MAXCHAR, fp) == NULL){
+                printf("Error: no max opinion value.\n");
+                return 1;
+            }
             max_value = atof(str);
             if (variablesVerbose) printf("Max opinion value: %lf \n", max_value);
-            fgets (str, MAXCHAR, fp);
+            
+            if (fgets (str, MAXCHAR, fp) == NULL){
+                printf("Error: no total number of iterations.\n");
+                return 1;
+            }
             n_iterations = (unsigned int) atoi(str);
             if (variablesVerbose) printf("Total number of iterations: %u \n", n_iterations);
-            // fgets (str, MAXCHAR, fp);
-            // step_iterations = (unsigned int) atoi(str);
-            // if (variablesVerbose) printf("Saves for each %u steps \n", step_iterations);
             step_iterations = n_iterations;
-            fgets (str, MAXCHAR, fp);
+
+            if (fgets (str, MAXCHAR, fp) == NULL){
+                printf("Error: no opinion change step.\n");
+                return 1;
+            }
             step = atof(str);
             if (variablesVerbose) printf("Opinion change step %lf \n", step);
+            
             //Transmission type
-            fgets (str, MAXCHAR, fp);
+            if (fgets (str, MAXCHAR, fp) == NULL){
+                printf("Error: no transmission type.\n");
+                return 1;
+            }
             str[strlen(str)-1] = '\0'; 
             if (strcmp("COS_X_2", str) == 0) transmission_type = COS_X_2;
             else if (strcmp("COS_X", str) == 0) transmission_type = COS_X;
@@ -560,8 +587,12 @@ int main(int argc, char *argv[]){
                 return 1;
             }
             if (variablesVerbose) printf("Transmission type %s %d\n", str, transmission_type);
+            
             //Reception type
-            fgets (str, MAXCHAR, fp);
+            if (fgets (str, MAXCHAR, fp) == NULL){
+                printf("Error: no reception type.\n");
+                return 1;
+            }
             str[strlen(str)-1] = '\0'; 
             if (strcmp("COS_X_2", str) == 0) reception_type = COS_X_2;
             else if (strcmp("COS_X", str) == 0) reception_type = COS_X;
@@ -573,7 +604,10 @@ int main(int argc, char *argv[]){
             }
             if (variablesVerbose) printf("Reception type %s %d\n", str, reception_type);
             
-            fgets (str, MAXCHAR, fp);
+            if (fgets (str, MAXCHAR, fp) == NULL){
+                printf("Error: no network name.\n");
+                return 1;
+            }
             n_separated_files = (unsigned int) atoi(str);
             if (variablesVerbose){
                 if (n_separated_files == 1)
@@ -581,7 +615,11 @@ int main(int argc, char *argv[]){
                 else
                     printf("Generates %u separated files.\n", n_separated_files);
             }
-            fgets (str, MAXCHAR, fp);
+            
+            if (fgets (str, MAXCHAR, fp) == NULL){
+                printf("Error: no rewiring parameter.\n");
+                return 1;
+            }
             rewire_dynamics = (bool) atoi(str);
             if (rewire_dynamics == true)
                 printf("Dynamics with rewiring.\n");
